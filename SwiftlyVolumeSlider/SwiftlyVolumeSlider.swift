@@ -51,7 +51,7 @@ public class SwiftlyVolumeSlider: UIView {
 	public var labelFontColor: UIColor = UIColor.whiteColor()
 	public var labelBackgroundColor: UIColor = UIColor.blackColor()
 	public var labelFont = UIFont(name: "Helvetica Neue", size: 12)
-	public var bgColor: UIColor = UIColor.yellowColor()
+	public var bgColor: UIColor = UIColor.whiteColor()
 	public var bgCornerRadius: CGFloat = 30
 	public var barColor: UIColor = UIColor.grayColor()
 	
@@ -116,10 +116,16 @@ public class SwiftlyVolumeSlider: UIView {
 			CGContextFillRect(context, rect)
 		}
 		else {
-			CGContextMoveToPoint(context, CGRectGetMaxX(rect) - offset, CGRectGetMaxY(rect) - doubleOffset);
-			CGContextAddLineToPoint(context, CGRectGetMidX(rect), CGRectGetMinY(rect) + doubleOffset);
-			CGContextAddLineToPoint(context, CGRectGetMinX(rect) + offset, CGRectGetMaxY(rect) - doubleOffset);
-			CGContextAddArc(context, CGRectGetMidX(rect), CGRectGetMaxY(rect) - doubleOffset, size.width * 0.25, CGFloat(M_PI), CGFloat(M_PI + M_PI_2), 1)
+//			CGContextMoveToPoint(context, CGRectGetMaxX(rect) - offset, CGRectGetMaxY(rect) - doubleOffset);
+//			CGContextAddLineToPoint(context, CGRectGetMidX(rect), CGRectGetMinY(rect) + doubleOffset);
+//			CGContextAddLineToPoint(context, CGRectGetMinX(rect) + offset, CGRectGetMaxY(rect) - doubleOffset);
+//			CGContextAddArc(context, CGRectGetMidX(rect), CGRectGetMaxY(rect) - doubleOffset, size.width * 0.25, CGFloat(M_PI), CGFloat(M_PI + M_PI_2), 1)
+			
+			let barWidth = size.width * 0.3
+			let rect = CGRectMake(size.width * 0.5 - barWidth * 0.5, 0, barWidth, size.height)
+			
+			CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
+			CGContextFillRect(context, rect)
 		}
 //		CGContextClosePath(context);
 //		CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));

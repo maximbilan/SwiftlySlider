@@ -11,17 +11,21 @@ import UIKit
 class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 
 	@IBOutlet weak var volumeSlider: SwiftlyVolumeSlider!
+	@IBOutlet weak var verticalVolumeSlider: SwiftlyVolumeSlider!
 	@IBOutlet weak var testLabel: UILabel!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		volumeSlider.delegate = self
-		volumeSlider.bgColor = UIColor.yellowColor()
+		volumeSlider.bgColor = UIColor.whiteColor()
 		volumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Horizontal
 		volumeSlider.minValue = 1
 		volumeSlider.maxValue = 20
 		volumeSlider.currentValue = 17
+		
+		verticalVolumeSlider.delegate = self
+		verticalVolumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Vertical
 	}
 
 	// MARK: - SwiftlyVolumeSliderDelegate
