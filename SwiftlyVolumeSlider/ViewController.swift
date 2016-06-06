@@ -17,6 +17,7 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		super.viewDidLoad()
 		
 		volumeSlider.delegate = self
+		volumeSlider.bgColor = UIColor.yellowColor()
 		volumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Horizontal
 		volumeSlider.minValue = 1
 		volumeSlider.maxValue = 20
