@@ -12,7 +12,7 @@
 		6D31CA011D054B4700F54F8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D31C9FF1D054B4700F54F8D /* Main.storyboard */; };
 		6D31CA031D054B4700F54F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D31CA021D054B4700F54F8D /* Assets.xcassets */; };
 		6D31CA061D054B4700F54F8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D31CA041D054B4700F54F8D /* LaunchScreen.storyboard */; };
-		6D31CA0E1D054BF800F54F8D /* SwiftlyVolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D31CA0D1D054BF800F54F8D /* SwiftlyVolumeSlider.swift */; };
+		6DF1CCED1D05BB7F001331AE /* SwiftlyVolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF1CCEC1D05BB7F001331AE /* SwiftlyVolumeSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		6D31CA021D054B4700F54F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D31CA051D054B4700F54F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D31CA071D054B4700F54F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D31CA0D1D054BF800F54F8D /* SwiftlyVolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftlyVolumeSlider.swift; sourceTree = "<group>"; };
+		6DF1CCEC1D05BB7F001331AE /* SwiftlyVolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftlyVolumeSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,23 @@
 		6D31C9FA1D054B4700F54F8D /* SwiftlyVolumeSlider */ = {
 			isa = PBXGroup;
 			children = (
+				6DF1CCEB1D05BB7F001331AE /* Sources */,
 				6D31C9FB1D054B4700F54F8D /* AppDelegate.swift */,
 				6D31C9FD1D054B4700F54F8D /* ViewController.swift */,
 				6D31C9FF1D054B4700F54F8D /* Main.storyboard */,
 				6D31CA021D054B4700F54F8D /* Assets.xcassets */,
 				6D31CA041D054B4700F54F8D /* LaunchScreen.storyboard */,
 				6D31CA071D054B4700F54F8D /* Info.plist */,
-				6D31CA0D1D054BF800F54F8D /* SwiftlyVolumeSlider.swift */,
 			);
 			path = SwiftlyVolumeSlider;
+			sourceTree = "<group>";
+		};
+		6DF1CCEB1D05BB7F001331AE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6DF1CCEC1D05BB7F001331AE /* SwiftlyVolumeSlider.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +148,7 @@
 			files = (
 				6D31C9FE1D054B4700F54F8D /* ViewController.swift in Sources */,
 				6D31C9FC1D054B4700F54F8D /* AppDelegate.swift in Sources */,
-				6D31CA0E1D054BF800F54F8D /* SwiftlyVolumeSlider.swift in Sources */,
+				6DF1CCED1D05BB7F001331AE /* SwiftlyVolumeSlider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
