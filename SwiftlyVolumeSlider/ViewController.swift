@@ -8,13 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 
+	@IBOutlet weak var volumeSlider: SwiftlyVolumeSlider!
+	@IBOutlet weak var testLabel: UILabel!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		volumeSlider.delegate = self
+		volumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Horizontal
+		volumeSlider.minValue = 1
+		volumeSlider.maxValue = 20
+		volumeSlider.currentValue = 17
 	}
 
+	// MARK: - SwiftlyVolumeSliderDelegate
+	
+	func valueChanged(value: Int) {
+		testLabel.text = "\(value)"
+	}
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
