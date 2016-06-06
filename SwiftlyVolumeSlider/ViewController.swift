@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 
+	// MARK: - Outlets
+	
 	@IBOutlet weak var volumeSlider: SwiftlyVolumeSlider!
 	@IBOutlet weak var verticalVolumeSlider: SwiftlyVolumeSlider!
 	@IBOutlet weak var testLabel: UILabel!
+	
+	// MARK: - UIViewController methods
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

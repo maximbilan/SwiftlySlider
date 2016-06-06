@@ -105,45 +105,12 @@ public class SwiftlyVolumeSlider: UIView {
 		UIGraphicsBeginImageContextWithOptions(size, false, 0)
 		
 		UIBezierPath(roundedRect: barRect, cornerRadius: bgCornerRadius).addClip()
-//		
+		
 		bgColor.set()
 		UIRectFill(rect)
 		
 		let context = UIGraphicsGetCurrentContext();
 		barColor.set()
-		
-		//let offset = (direction == .Horizontal ? size.height * 0.25 : size.width * 0.25)
-		//let doubleOffset = offset * 2
-		
-		//CGContextBeginPath(context);
-//		if direction == .Horizontal {
-//			//CGContextMoveToPoint(context, CGRectGetMaxX(rect) - doubleOffset, CGRectGetMinY(rect) + offset);
-//			//CGContextAddLineToPoint(context, CGRectGetMinX(rect) + doubleOffset, CGRectGetMidY(rect));
-//			//CGContextAddLineToPoint(context, CGRectGetMaxX(rect) - doubleOffset, CGRectGetMaxY(rect) - offset);
-////			CGContextAddArc(context, CGRectGetMaxX(rect) - doubleOffset, CGRectGetMidY(rect), size.height * 0.25, CGFloat(M_PI_2), CGFloat(M_PI), 1)
-//			
-//			//let barHeight = size.height * 0.2
-//			//let rect = CGRectMake(0, size.height * 0.5 - barHeight * 0.5, size.width, barHeight)
-//			
-//			CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
-//			CGContextFillRect(context, rect)
-//		}
-//		else {
-////			CGContextMoveToPoint(context, CGRectGetMaxX(rect) - offset, CGRectGetMaxY(rect) - doubleOffset);
-////			CGContextAddLineToPoint(context, CGRectGetMidX(rect), CGRectGetMinY(rect) + doubleOffset);
-////			CGContextAddLineToPoint(context, CGRectGetMinX(rect) + offset, CGRectGetMaxY(rect) - doubleOffset);
-////			CGContextAddArc(context, CGRectGetMidX(rect), CGRectGetMaxY(rect) - doubleOffset, size.width * 0.25, CGFloat(M_PI), CGFloat(M_PI + M_PI_2), 1)
-//			
-//			//let barWidth = size.width * 0.2
-//			//let rect = CGRectMake(size.width * 0.5 - barWidth * 0.5, 0, barWidth, size.height)
-//			
-//			CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
-//			CGContextFillRect(context, rect)
-//		}
-//		CGContextClosePath(context);
-//		CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
-//		CGContextFillPath(context);
-//		CGContextStrokePath(context);
 		
 		CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
 		CGContextFillRect(context, barRect)
