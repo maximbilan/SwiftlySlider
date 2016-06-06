@@ -29,11 +29,4 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		testLabel.text = "\(value)"
 	}
 	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
-
 }
-
