@@ -24,6 +24,7 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		volumeSlider.maxValue = 20
 		volumeSlider.currentValue = 17
 		volumeSlider.sliderImage = UIImage(named: "Slider")
+		volumeSlider.sliderImageOffset = CGPoint(x: 0, y: -1)
 		volumeSlider.sliderSize = CGSize(width: 30, height: 15)
 		volumeSlider.bgColor = UIColor.yellowColor()
 		

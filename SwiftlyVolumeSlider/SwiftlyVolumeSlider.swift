@@ -55,6 +55,7 @@ public class SwiftlyVolumeSlider: UIView {
 	public var bgCornerRadius: CGFloat = 30
 	public var barColor: UIColor = UIColor.grayColor()
 	public var sliderImage: UIImage?
+	public var sliderImageOffset: CGPoint = CGPointZero
 	public var sliderSize: CGSize = CGSizeZero
 	
 	// MARK: - Private properties
@@ -212,7 +213,7 @@ public class SwiftlyVolumeSlider: UIView {
 		
 		let context = UIGraphicsGetCurrentContext();
 		if let image = sliderImage {
-			CGContextDrawImage(context, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x, radius * 0.5 - sliderSize.height * 0.5, sliderSize.width, sliderSize.height) : circleRect), image.CGImage)
+			CGContextDrawImage(context, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x + sliderImageOffset.x, radius * 0.5 - sliderSize.height * 0.5 + sliderImageOffset.y, sliderSize.width, sliderSize.height) : circleRect), image.CGImage)
 		}
 		else {
 			circleColor.set()
