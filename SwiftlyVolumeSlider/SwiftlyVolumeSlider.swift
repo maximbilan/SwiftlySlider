@@ -54,6 +54,8 @@ public class SwiftlyVolumeSlider: UIView {
 	public var bgColor: UIColor = UIColor.whiteColor()
 	public var bgCornerRadius: CGFloat = 30
 	public var barColor: UIColor = UIColor.grayColor()
+	public var sliderImage: UIImage?
+	public var sliderSize: CGSize = CGSizeZero
 	
 	// MARK: - Private properties
 	
@@ -109,7 +111,7 @@ public class SwiftlyVolumeSlider: UIView {
 			//CGContextAddLineToPoint(context, CGRectGetMaxX(rect) - doubleOffset, CGRectGetMaxY(rect) - offset);
 //			CGContextAddArc(context, CGRectGetMaxX(rect) - doubleOffset, CGRectGetMidY(rect), size.height * 0.25, CGFloat(M_PI_2), CGFloat(M_PI), 1)
 			
-			let barHeight = size.height * 0.3
+			let barHeight = size.height * 0.2
 			let rect = CGRectMake(0, size.height * 0.5 - barHeight * 0.5, size.width, barHeight)
 			
 			CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
@@ -121,7 +123,7 @@ public class SwiftlyVolumeSlider: UIView {
 //			CGContextAddLineToPoint(context, CGRectGetMinX(rect) + offset, CGRectGetMaxY(rect) - doubleOffset);
 //			CGContextAddArc(context, CGRectGetMidX(rect), CGRectGetMaxY(rect) - doubleOffset, size.width * 0.25, CGFloat(M_PI), CGFloat(M_PI + M_PI_2), 1)
 			
-			let barWidth = size.width * 0.3
+			let barWidth = size.width * 0.2
 			let rect = CGRectMake(size.width * 0.5 - barWidth * 0.5, 0, barWidth, size.height)
 			
 			CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
@@ -196,11 +198,16 @@ public class SwiftlyVolumeSlider: UIView {
 		}
 		
 		let context = UIGraphicsGetCurrentContext();
-		circleColor.set()
-		CGContextAddEllipseInRect(context, circleRect);
-		CGContextSetFillColor(context, CGColorGetComponents(circleColor.CGColor));
-		CGContextFillPath(context);
-		CGContextStrokePath(context);
+		if let image = sliderImage {
+			CGContextDrawImage(context, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x, radius * 0.5 - sliderSize.height * 0.5, sliderSize.width, sliderSize.height) : circleRect), image.CGImage)
+		}
+		else {
+			circleColor.set()
+			CGContextAddEllipseInRect(context, circleRect)
+			CGContextSetFillColor(context, CGColorGetComponents(circleColor.CGColor))
+			CGContextFillPath(context)
+			CGContextStrokePath(context)
+		}
 		
 		let textParagraphStyle = NSMutableParagraphStyle()
 		textParagraphStyle.alignment = .Center
