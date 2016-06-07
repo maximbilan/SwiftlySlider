@@ -147,6 +147,38 @@ public class SwiftlyVolumeSlider: UIView {
 	override public func drawRect(rect: CGRect) {
 		super.drawRect(rect)
 		
+		let context = UIGraphicsGetCurrentContext()
+		
+		var barRect = CGRectNull
+		if direction == .Horizontal {
+			let barHeight = rect.size.height * 0.2
+			barRect = CGRectMake(0, rect.size.height * 0.5 - barHeight * 0.5, rect.size.width, barHeight)
+		}
+		else {
+			let barWidth = rect.size.width * 0.2
+			barRect = CGRectMake(rect.size.width * 0.5 - barWidth * 0.5, 0, barWidth, rect.size.height)
+		}
+		let triangleHeight = rect.size.height * 0.3
+		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let halfOffset = offset * 0.5
+		var size = self.frame.size
+		if direction == .Horizontal {
+			size.width -= offset
+		}
+		else {
+			size.height -= offset
+		}
+		let x: CGFloat = ((CGFloat(normalValue - minValue) * (size.width)) / CGFloat(maxValue - minValue)) + halfOffset
+		
+		let trianglePath = UIBezierPath()
+		trianglePath.moveToPoint(CGPoint(x: x, y: barRect.origin.y))
+		trianglePath.addLineToPoint(CGPoint(x: x - triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
+		trianglePath.addLineToPoint(CGPoint(x: x + triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
+		trianglePath.addLineToPoint(CGPoint(x: x, y: barRect.origin.y))
+		
+		CGContextSetFillColorWithColor(context, barColor.CGColor)
+		trianglePath.fill()
+		
 		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
 		let halfRadius = radius * 0.5
 		var circleX = currentSelectionX - halfRadius
@@ -180,7 +212,6 @@ public class SwiftlyVolumeSlider: UIView {
 			image.drawInRect(imageRect)
 		}
 		
-		let context = UIGraphicsGetCurrentContext();
 		if let image = sliderImage {
 			CGContextDrawImage(context, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x + sliderImageOffset.x, radius * 0.5 - sliderSize.height * 0.5 + sliderImageOffset.y, sliderSize.width, sliderSize.height) : circleRect), image.CGImage)
 		}
@@ -203,37 +234,6 @@ public class SwiftlyVolumeSlider: UIView {
 			textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
 			text.drawInRect(textRect, withAttributes: attributes as? [String : AnyObject])
 		}
-		
-		
-		var barRect = CGRectNull
-		if direction == .Horizontal {
-			let barHeight = rect.size.height * 0.2
-			barRect = CGRectMake(0, rect.size.height * 0.5 - barHeight * 0.5, rect.size.width, barHeight)
-		}
-		else {
-			let barWidth = rect.size.width * 0.2
-			barRect = CGRectMake(rect.size.width * 0.5 - barWidth * 0.5, 0, barWidth, rect.size.height)
-		}
-		let triangleHeight = rect.size.height * 0.3
-		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
-		let halfOffset = offset * 0.5
-		var size = self.frame.size
-		if direction == .Horizontal {
-			size.width -= offset
-		}
-		else {
-			size.height -= offset
-		}
-		let x: CGFloat = ((CGFloat(normalValue - minValue) * (size.width)) / CGFloat(maxValue - minValue)) + halfOffset
-		
-		let trianglePath = UIBezierPath()
-		trianglePath.moveToPoint(CGPoint(x: x, y: barRect.origin.y))
-		trianglePath.addLineToPoint(CGPoint(x: x - triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
-		trianglePath.addLineToPoint(CGPoint(x: x + triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
-		trianglePath.addLineToPoint(CGPoint(x: x, y: barRect.origin.y))
-		
-		CGContextSetFillColorWithColor(context, barColor.CGColor)
-		trianglePath.fill()
 	}
 	
 	// MARK: - Touch events
