@@ -36,6 +36,8 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		
 		verticalVolumeSlider.delegate = self
 		verticalVolumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Vertical
+		verticalVolumeSlider.useNormalIndicator = true
+		verticalVolumeSlider.normalValue = 15
 	}
 
 	// MARK: - SwiftlyVolumeSliderDelegate
