@@ -149,42 +149,44 @@ public class SwiftlyVolumeSlider: UIView {
 		
 		let context = UIGraphicsGetCurrentContext()
 		
-		var barRect = CGRectNull
-		if direction == .Horizontal {
-			let barHeight = rect.size.height * 0.2
+		if useNormalIndicator {
+			var barRect = CGRectNull
+			if direction == .Horizontal {
+				let barHeight = rect.size.height * 0.2
+				
+				barRect = CGRectMake(0, rect.size.height * 0.5 - barHeight * 0.5, rect.size.width, barHeight)
+			}
+			else {
+				let barWidth = rect.size.width * 0.2
+				barRect = CGRectMake(rect.size.width * 0.5 - barWidth * 0.5, 0, barWidth, rect.size.height)
+			}
 			
-			barRect = CGRectMake(0, rect.size.height * 0.5 - barHeight * 0.5, rect.size.width, barHeight)
+			let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+			let halfOffset = offset * 0.5
+			var size = self.frame.size
+			let trianglePath = UIBezierPath()
+			if direction == .Horizontal {
+				size.width -= offset
+				let triangleHeight = rect.size.height * 0.3
+				let triangleX = ((CGFloat(normalValue - minValue) * (size.width)) / CGFloat(maxValue - minValue)) + halfOffset
+				trianglePath.moveToPoint(CGPoint(x: triangleX, y: barRect.origin.y))
+				trianglePath.addLineToPoint(CGPoint(x: triangleX - triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
+				trianglePath.addLineToPoint(CGPoint(x: triangleX + triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
+				trianglePath.addLineToPoint(CGPoint(x: triangleX, y: barRect.origin.y))
+			}
+			else {
+				size.height -= offset
+				let triangleWidth = rect.size.width * 0.3
+				let triangleY = ((CGFloat(normalValue - minValue) * (size.height)) / CGFloat(maxValue - minValue)) + halfOffset
+				trianglePath.moveToPoint(CGPoint(x: barRect.origin.x, y: triangleY))
+				trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x - triangleWidth, y: triangleY - triangleWidth * 0.5))
+				trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x - triangleWidth, y: triangleY + triangleWidth * 0.5))
+				trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x, y: triangleY))
+			}
+			
+			CGContextSetFillColorWithColor(context, barColor.CGColor)
+			trianglePath.fill()
 		}
-		else {
-			let barWidth = rect.size.width * 0.2
-			barRect = CGRectMake(rect.size.width * 0.5 - barWidth * 0.5, 0, barWidth, rect.size.height)
-		}
-		
-		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
-		let halfOffset = offset * 0.5
-		var size = self.frame.size
-		let trianglePath = UIBezierPath()
-		if direction == .Horizontal {
-			size.width -= offset
-			let triangleHeight = rect.size.height * 0.3
-			let triangleX = ((CGFloat(normalValue - minValue) * (size.width)) / CGFloat(maxValue - minValue)) + halfOffset
-			trianglePath.moveToPoint(CGPoint(x: triangleX, y: barRect.origin.y))
-			trianglePath.addLineToPoint(CGPoint(x: triangleX - triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
-			trianglePath.addLineToPoint(CGPoint(x: triangleX + triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
-			trianglePath.addLineToPoint(CGPoint(x: triangleX, y: barRect.origin.y))
-		}
-		else {
-			size.height -= offset
-			let triangleWidth = rect.size.width * 0.3
-			let triangleY = ((CGFloat(normalValue - minValue) * (size.height)) / CGFloat(maxValue - minValue)) + halfOffset
-			trianglePath.moveToPoint(CGPoint(x: barRect.origin.x, y: triangleY))
-			trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x - triangleWidth, y: triangleY - triangleWidth * 0.5))
-			trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x - triangleWidth, y: triangleY + triangleWidth * 0.5))
-			trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x, y: triangleY))
-		}
-		
-		CGContextSetFillColorWithColor(context, barColor.CGColor)
-		trianglePath.fill()
 		
 		let radius = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
 		let halfRadius = radius * 0.5
