@@ -31,6 +31,8 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		volumeSlider.sliderImageOffset = CGPoint(x: 0, y: -1)
 		volumeSlider.sliderSize = CGSize(width: 30, height: 15)
 		volumeSlider.bgColor = UIColor.yellowColor()
+		volumeSlider.useNormalIndicator = true
+		volumeSlider.normalValue = 10
 		
 		verticalVolumeSlider.delegate = self
 		verticalVolumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Vertical

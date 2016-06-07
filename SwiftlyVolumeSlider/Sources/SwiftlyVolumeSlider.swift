@@ -45,6 +45,7 @@ public class SwiftlyVolumeSlider: UIView {
 	}
 	public var minValue: Int = 0
 	public var maxValue: Int = 20
+	public var normalValue: Int = 0
 	
 	// MARK: - Additional public properties
 	
@@ -57,6 +58,7 @@ public class SwiftlyVolumeSlider: UIView {
 	public var sliderImage: UIImage?
 	public var sliderImageOffset: CGPoint = CGPointZero
 	public var sliderSize: CGSize = CGSizeZero
+	public var useNormalIndicator = false
 	
 	// MARK: - Private properties
 	
@@ -201,6 +203,37 @@ public class SwiftlyVolumeSlider: UIView {
 			textRect.origin.y += (textRect.size.height - (labelFont?.lineHeight)!) * 0.5
 			text.drawInRect(textRect, withAttributes: attributes as? [String : AnyObject])
 		}
+		
+		
+		var barRect = CGRectNull
+		if direction == .Horizontal {
+			let barHeight = rect.size.height * 0.2
+			barRect = CGRectMake(0, rect.size.height * 0.5 - barHeight * 0.5, rect.size.width, barHeight)
+		}
+		else {
+			let barWidth = rect.size.width * 0.2
+			barRect = CGRectMake(rect.size.width * 0.5 - barWidth * 0.5, 0, barWidth, rect.size.height)
+		}
+		let triangleHeight = rect.size.height * 0.3
+		let offset = (direction == .Horizontal ? self.frame.size.height : self.frame.size.width)
+		let halfOffset = offset * 0.5
+		var size = self.frame.size
+		if direction == .Horizontal {
+			size.width -= offset
+		}
+		else {
+			size.height -= offset
+		}
+		let x: CGFloat = ((CGFloat(normalValue - minValue) * (size.width)) / CGFloat(maxValue - minValue)) + halfOffset
+		
+		let trianglePath = UIBezierPath()
+		trianglePath.moveToPoint(CGPoint(x: x, y: barRect.origin.y))
+		trianglePath.addLineToPoint(CGPoint(x: x - triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
+		trianglePath.addLineToPoint(CGPoint(x: x + triangleHeight * 0.5, y: barRect.origin.y - triangleHeight))
+		trianglePath.addLineToPoint(CGPoint(x: x, y: barRect.origin.y))
+		
+		CGContextSetFillColorWithColor(context, barColor.CGColor)
+		trianglePath.fill()
 	}
 	
 	// MARK: - Touch events
