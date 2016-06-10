@@ -1,1 +1,1 @@
-# SwiftlyVolumeSlider
+# SwiftlySlider
