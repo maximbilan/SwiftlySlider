@@ -8,11 +8,11 @@
 
 import UIKit
 
-public protocol SwiftlyVolumeSliderDelegate : class {
-	func valueChanged(value: Int)
+public protocol SwiftlySliderDelegate : class {
+	func swiftlySliderValueChanged(value: Int)
 }
 
-public class SwiftlyVolumeSlider: UIView {
+public class SwiftlySlider: UIView {
 	
 	// MARK: - Direction
 	
@@ -23,7 +23,7 @@ public class SwiftlyVolumeSlider: UIView {
 	
 	// MARK: - Public properties
 	
-	public weak var delegate: SwiftlyVolumeSliderDelegate!
+	public weak var delegate: SwiftlySliderDelegate!
 	public var direction: PickerDirection = .Horizontal
 	public var currentValue: Int {
 		get {
@@ -295,7 +295,7 @@ public class SwiftlyVolumeSlider: UIView {
 		value = minValue + Int(percent * CGFloat(maxValue - minValue))
 		
 		if delegate != nil {
-			delegate.valueChanged(value)
+			delegate.swiftlySliderValueChanged(value)
 		}
 		
 		setNeedsDisplay()

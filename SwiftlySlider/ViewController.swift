@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
+class ViewController: UIViewController, SwiftlySliderDelegate {
 
 	// MARK: - Outlets
 	
-	@IBOutlet weak var volumeSlider: SwiftlyVolumeSlider!
-	@IBOutlet weak var verticalVolumeSlider: SwiftlyVolumeSlider!
+	@IBOutlet weak var volumeSlider: SwiftlySlider!
+	@IBOutlet weak var verticalVolumeSlider: SwiftlySlider!
 	@IBOutlet weak var testLabel: UILabel!
 	
 	// MARK: - UIViewController methods
@@ -23,7 +23,7 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		
 		volumeSlider.delegate = self
 		volumeSlider.bgColor = UIColor.whiteColor()
-		volumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Horizontal
+		volumeSlider.direction = SwiftlySlider.PickerDirection.Horizontal
 		volumeSlider.minValue = 1
 		volumeSlider.maxValue = 20
 		volumeSlider.currentValue = 17
@@ -35,13 +35,13 @@ class ViewController: UIViewController, SwiftlyVolumeSliderDelegate {
 		volumeSlider.normalValue = 15
 		
 		verticalVolumeSlider.delegate = self
-		verticalVolumeSlider.direction = SwiftlyVolumeSlider.PickerDirection.Vertical
+		verticalVolumeSlider.direction = SwiftlySlider.PickerDirection.Vertical
 		verticalVolumeSlider.useNormalIndicator = false
 	}
 
 	// MARK: - SwiftlyVolumeSliderDelegate
 	
-	func valueChanged(value: Int) {
+	func swiftlySliderValueChanged(value: Int) {
 		testLabel.text = "\(value)"
 	}
 	
