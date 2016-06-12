@@ -1,6 +1,6 @@
 //
-//  SwiftlyVolumeSlider.swift
-//  SwiftlyVolumeSlider
+//  SwiftlySlider.swift
+//  SwiftlySlider
 //
 //  Created by Maxim Bilan on 6/6/16.
 //  Copyright © 2016 Maxim Bilan. All rights reserved.
