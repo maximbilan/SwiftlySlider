@@ -111,10 +111,10 @@ public class SwiftlyVolumeSlider: UIView {
 		bgColor.set()
 		UIRectFill(rect)
 		
-		let context = UIGraphicsGetCurrentContext();
+		let context = UIGraphicsGetCurrentContext()
 		barColor.set()
 		
-		CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor));
+		CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor))
 		CGContextFillRect(context, barRect)
 		
 		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
