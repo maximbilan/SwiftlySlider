@@ -266,7 +266,6 @@ public class SwiftlySlider: UIView {
 	}
 	
 	override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-		
 	}
 	
 	// MARK: - Touch handling
