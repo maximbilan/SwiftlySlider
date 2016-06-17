@@ -64,8 +64,8 @@ public class SwiftlySlider: UIView {
 	
 	private var value: Int = 0
 	private var image: UIImage!
-	private var currentSelectionY: CGFloat = 0.0
-	private var currentSelectionX: CGFloat = 0.0
+	private var currentSelectionY: CGFloat = 0
+	private var currentSelectionX: CGFloat = 0
 	
 	// MARK: - Initialization
 	
