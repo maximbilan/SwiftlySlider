@@ -222,6 +222,8 @@ public class SwiftlySlider: UIView {
 		}
 		
 		if let image = sliderImage {
+			CGContextTranslateCTM(context, 0, imageRect.size.height);
+			CGContextScaleCTM(context, 1.0, -1.0);
 			CGContextDrawImage(context, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x + sliderImageOffset.x, radius * 0.5 - sliderSize.height * 0.5 + sliderImageOffset.y, sliderSize.width, sliderSize.height) : circleRect), image.CGImage)
 		}
 		else {
