@@ -57,12 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				94E04B0D1D0B1B6C00E39369 /* Sources */,
+				94E04B0F1D0B1B6C00E39369 /* ViewController.swift */,
 				94E04B061D0B1B6C00E39369 /* AppDelegate.swift */,
-				94E04B071D0B1B6C00E39369 /* Assets.xcassets */,
 				94E04B081D0B1B6C00E39369 /* LaunchScreen.storyboard */,
 				94E04B0A1D0B1B6C00E39369 /* Main.storyboard */,
+				94E04B071D0B1B6C00E39369 /* Assets.xcassets */,
 				94E04B0C1D0B1B6C00E39369 /* Info.plist */,
-				94E04B0F1D0B1B6C00E39369 /* ViewController.swift */,
 			);
 			path = SwiftlySlider;
 			sourceTree = "<group>";
