@@ -16,12 +16,12 @@ Just copy the <i>SwiftlySlider.swift</i> into your project.
 
 ## Using
 
-You can create from Storyboard or XIB. Or create manually:
+You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 <pre>
 let slider = SwiftlySlider()
 </pre>
 
-For handling changing of values you should implement protocol SwiftlySliderDelegate:
+For handling changing of values you should implement protocol <i>SwiftlySliderDelegate</i>:
 
 <pre>
 slider.delegate = self
