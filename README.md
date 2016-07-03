@@ -11,7 +11,7 @@ pod 'SwiftlySlider'
 </pre>
 <b>Manual</b>:
 <pre>
-<i>Just copy the SwiftlySlider.swift into your project:</i>
+Just copy the <i>SwiftlySlider.swift</i> into your project.
 </pre>
 
 ## Using
