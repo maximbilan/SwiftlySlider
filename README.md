@@ -1,5 +1,7 @@
 # SwiftlySlider
 
+Simple iOS slider control.
+
 ![alt tag](https://raw.github.com/maximbilan/SwiftlySlider/master/img/1.png)
 
 ## Installation
@@ -9,9 +11,7 @@ pod 'SwiftlySlider'
 </pre>
 <b>Manual</b>:
 <pre>
-<i>Just copy the following files into your project:</i>
-
-SwiftlySlider.swift
+<i>Just copy the SwiftlySlider.swift into your project:</i>
 </pre>
 
 ## Using
