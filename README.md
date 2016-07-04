@@ -50,6 +50,14 @@ sliderImageOffset // Offset of custom slider position
 sliderSize        // Size of custom slider position
 </pre>
 
+Example:
+
+<pre>
+slider.sliderImage = UIImage(named: "CustomSlider")
+slider.sliderImageOffset = CGPoint(x: 0, y: -1)
+slider.sliderSize = CGSize(width: 30, height: 15)
+</pre>
+
 Normal indicator:
 
 <pre>
