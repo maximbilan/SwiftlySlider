@@ -44,14 +44,18 @@ picker.minValue     = 1
 
 Slider settings:
 
-sliderImage //
-sliderImageOffset //
-sliderSize // 
+<pre>
+sliderImage       // Custom image of the slider
+sliderImageOffset // Offset of custom slider position
+sliderSize        // Size of custom slider position
+</pre>
 
 Normal indicator:
 
-useNormalIndicator //
-normalValue //
+<pre>
+useNormalIndicator  // Use normal indicator
+normalValue         // Normal value
+</pre>
 
 Color settings:
 <pre>
@@ -60,12 +64,6 @@ labelBackgroundColor  // Background color of the moving label
 labelFont             // Font of the moving label
 bgColor               // Background color
 </pre>
-
-//volumeSlider.sliderImage = UIImage(named: "Slider")
-//		volumeSlider.sliderImageOffset = CGPoint(x: 0, y: -1)
-//		volumeSlider.sliderSize = CGSize(width: 30, height: 15)
-//		volumeSlider.useNormalIndicator = true
-//		volumeSlider.normalValue = 15
 
 You can easily found example in this repository.
 
