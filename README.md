@@ -41,6 +41,18 @@ picker.currentValue = 0
 picker.maxValue     = 30
 picker.minValue     = 1
 </pre>
+
+Slider settings:
+
+sliderImage //
+sliderImageOffset //
+sliderSize // 
+
+Normal indicator:
+
+useNormalIndicator //
+normalValue //
+
 Color settings:
 <pre>
 labelFontColor        // Font color of the moving label
