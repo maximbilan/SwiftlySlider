@@ -41,12 +41,19 @@ picker.currentValue = 0
 picker.maxValue     = 30
 picker.minValue     = 1
 </pre>
-And other settings:
+Color settings:
 <pre>
 labelFontColor        // Font color of the moving label
 labelBackgroundColor  // Background color of the moving label
 labelFont             // Font of the moving label
+bgColor               // Background color
 </pre>
+
+//volumeSlider.sliderImage = UIImage(named: "Slider")
+//		volumeSlider.sliderImageOffset = CGPoint(x: 0, y: -1)
+//		volumeSlider.sliderSize = CGSize(width: 30, height: 15)
+//		volumeSlider.useNormalIndicator = true
+//		volumeSlider.normalValue = 15
 
 You can easily found example in this repository.
 
