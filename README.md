@@ -30,6 +30,24 @@ func swiftlySliderValueChanged(value: Int) {
 }
 </pre>
 
+Direction:
+<pre>
+picker.direction = SwiftlySlider.PickerDirection.Horizontal // Vertical, Horizontal
+</pre>
+
+Also you can change current value, maximum value or minimum value, for example:
+<pre>
+picker.currentValue = 0
+picker.maxValue     = 30
+picker.minValue     = 1
+</pre>
+And other settings:
+<pre>
+labelFontColor        // Font color of the moving label
+labelBackgroundColor  // Background color of the moving label
+labelFont             // Font of the moving label
+</pre>
+
 You can easily found example in this repository.
 
 ## License
