@@ -9,8 +9,10 @@ Simple iOS slider control.
 <pre>
 For Swift 2.2:
 pod 'SwiftlySlider', '~> 0.3.3'
+
 For Swift 2.3:
 pod 'SwiftlySlider', '~> 0.4'
+
 For Swift 3.0:
 pod 'SwiftlySlider', '~> 0.5'
 </pre>
