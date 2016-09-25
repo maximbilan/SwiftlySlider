@@ -107,6 +107,7 @@
 				TargetAttributes = {
 					6D31C9F71D054B4700F54F8D = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -267,6 +268,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maximbilan.SwiftlySlider;
 				PRODUCT_NAME = SwiftlySlider;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -278,6 +280,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maximbilan.SwiftlySlider;
 				PRODUCT_NAME = SwiftlySlider;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

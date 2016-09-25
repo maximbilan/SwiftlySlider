@@ -114,10 +114,10 @@ public class SwiftlySlider: UIView {
 		let context = UIGraphicsGetCurrentContext()
 		barColor.set()
 		
-		CGContextSetFillColor(context, CGColorGetComponents(barColor.CGColor))
-		CGContextFillRect(context, barRect)
+		CGContextSetFillColor(context!, CGColorGetComponents(barColor.CGColor))
+		CGContextFillRect(context!, barRect)
 		
-		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
 		UIGraphicsEndImageContext()
 		return image
 	}
@@ -184,7 +184,7 @@ public class SwiftlySlider: UIView {
 				trianglePath.addLineToPoint(CGPoint(x: barRect.origin.x, y: triangleY))
 			}
 			
-			CGContextSetFillColorWithColor(context, barColor.CGColor)
+			CGContextSetFillColorWithColor(context!, barColor.CGColor)
 			trianglePath.fill()
 		}
 		
@@ -222,16 +222,16 @@ public class SwiftlySlider: UIView {
 		}
 		
 		if let image = sliderImage {
-			CGContextTranslateCTM(context, 0, imageRect.size.height)
-			CGContextScaleCTM(context, 1.0, -1.0)
-			CGContextDrawImage(context, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x + sliderImageOffset.x, radius * 0.5 - sliderSize.height * 0.5 + sliderImageOffset.y, sliderSize.width, sliderSize.height) : circleRect), image.CGImage)
+			CGContextTranslateCTM(context!, 0, imageRect.size.height)
+			CGContextScaleCTM(context!, 1.0, -1.0)
+			CGContextDrawImage(context!, (sliderSize != CGSizeZero ? CGRectMake(circleRect.origin.x + sliderImageOffset.x, radius * 0.5 - sliderSize.height * 0.5 + sliderImageOffset.y, sliderSize.width, sliderSize.height) : circleRect), image.CGImage!)
 		}
 		else {
 			circleColor.set()
-			CGContextAddEllipseInRect(context, circleRect)
-			CGContextSetFillColor(context, CGColorGetComponents(circleColor.CGColor))
-			CGContextFillPath(context)
-			CGContextStrokePath(context)
+			CGContextAddEllipseInRect(context!, circleRect)
+			CGContextSetFillColor(context!, CGColorGetComponents(circleColor.CGColor))
+			CGContextFillPath(context!)
+			CGContextStrokePath(context!)
 			
 			let textParagraphStyle = NSMutableParagraphStyle()
 			textParagraphStyle.alignment = .Center
@@ -267,7 +267,7 @@ public class SwiftlySlider: UIView {
 		handleTouch(point)
 	}
 	
-	override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+	override public func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
 	}
 	
 	// MARK: - Touch handling
