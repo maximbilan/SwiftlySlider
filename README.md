@@ -7,14 +7,11 @@ Simple iOS slider control.
 ## Installation
 <b>CocoaPods</b>:
 <pre>
-Swift 2.2:
-pod 'SwiftlySlider', '~> 0.3.3'
-
-Swift 2.3:
-pod 'SwiftlySlider', '~> 0.4'
-
 Swift 3.0:
-pod 'SwiftlySlider', '~> 0.5'
+pod 'SwiftlySlider', '0.5'
+
+Swift 4.0:
+pod 'SwiftlySlider', '~> 0.6'
 </pre>
 <b>Manual</b>:
 <pre>
