@@ -1,5 +1,11 @@
 # SwiftlySlider
 
+[![Version](https://img.shields.io/cocoapods/v/SwiftlySlider.svg?style=flat)](http://cocoadocs.org/docsets/SwiftlySlider)
+[![License](https://img.shields.io/cocoapods/l/SwiftlySlider.svg?style=flat)](http://cocoadocs.org/docsets/SwiftlySlider)
+[![Platform](https://img.shields.io/cocoapods/p/SwiftlySlider.svg?style=flat)](http://cocoadocs.org/docsets/SwiftlySlider)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/SwiftlySlider.svg)](https://cocoapods.org/pods/SwiftlySlider)
+[![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftlySlider.svg)](https://cocoapods.org/pods/SwiftlySlider)
+
 Simple iOS slider control.
 
 ![alt tag](https://raw.github.com/maximbilan/SwiftlySlider/master/img/1.png)
