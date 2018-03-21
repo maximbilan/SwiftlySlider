@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name         = "SwiftlySlider"
-	s.version      = "0.6"
+	s.version      = "0.7"
 	s.summary      = "SwiftlySlider"
 	s.description  = "SwiftlySlider - a custom slider control"
 	s.homepage     = "https://github.com/maximbilan/SwiftlySlider"
