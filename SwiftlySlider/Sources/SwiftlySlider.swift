@@ -222,8 +222,12 @@ open class SwiftlySlider: UIView {
 		}
 		
 		if let image = sliderImage {
-			context!.translateBy(x: 0, y: imageRect.size.height)
-			context!.scaleBy(x: 1.0, y: -1.0)
+			if direction == .horizontal {
+				context!.translateBy(x: 0, y: imageRect.size.height)
+				context!.scaleBy(x: 1.0, y: -1.0)
+			} else {
+				context!.scaleBy(x: 1.0, y: 1.0)
+			}
 			context!.draw(image.cgImage!, in: (sliderSize != CGSize.zero ? CGRect(x: circleRect.origin.x + sliderImageOffset.x, y: radius * 0.5 - sliderSize.height * 0.5 + sliderImageOffset.y, width: sliderSize.width, height: sliderSize.height) : circleRect))
 		}
 		else {
