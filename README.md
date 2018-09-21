@@ -51,9 +51,9 @@ picker.minValue     = 1
 Slider settings:
 
 <pre>
-sliderImage       // Custom image of the slider
-sliderImageOffset // Offset of custom slider position
-sliderSize        // Size of custom slider position
+sliderImage       // Custom an image of the slider
+sliderImageOffset // A offset of the custom slider position
+sliderSize        // A size of the custom slider position
 </pre>
 
 Example:
@@ -67,16 +67,16 @@ slider.sliderSize = CGSize(width: 30, height: 15)
 Normal indicator:
 
 <pre>
-useNormalIndicator  // Use normal indicator
-normalValue         // Normal value
+useNormalIndicator  // Use a normal indicator
+normalValue         // A normal value
 </pre>
 
 Color settings:
 <pre>
-labelFontColor        // Font color of the moving label
-labelBackgroundColor  // Background color of the moving label
-labelFont             // Font of the moving label
-bgColor               // Background color
+labelFontColor        // A font color of the moving label
+labelBackgroundColor  // A background color of the moving label
+labelFont             // A font of the moving label
+bgColor               // A background color
 </pre>
 
 You can easily found example in this repository.
