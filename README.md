@@ -6,18 +6,14 @@
 [![CocoaPods](https://img.shields.io/cocoapods/dt/SwiftlySlider.svg)](https://cocoapods.org/pods/SwiftlySlider)
 [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftlySlider.svg)](https://cocoapods.org/pods/SwiftlySlider)
 
-Simple iOS slider control.
+A simple iOS slider control.
 
 ![alt tag](https://raw.github.com/maximbilan/SwiftlySlider/master/img/1.png)
 
 ## Installation
 <b>CocoaPods</b>:
 <pre>
-Swift 3.0:
-pod 'SwiftlySlider', '0.5'
-
-Swift 4.0:
-pod 'SwiftlySlider', '~> 0.6'
+pod 'SwiftlySlider'
 </pre>
 <b>Manual</b>:
 <pre>
