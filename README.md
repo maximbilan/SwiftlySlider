@@ -27,7 +27,7 @@ You can create from <i>Storyboard</i> or <i>XIB</i>. Or create manually:
 let slider = SwiftlySlider()
 </pre>
 
-For handling changing of values you should implement protocol <i>SwiftlySliderDelegate</i>:
+For handling changing of values you should implement a protocol <i>SwiftlySliderDelegate</i>:
 
 <pre>
 slider.delegate = self
@@ -41,7 +41,7 @@ Direction:
 picker.direction = SwiftlySlider.PickerDirection.Horizontal // Vertical, Horizontal
 </pre>
 
-Also you can change current value, maximum value or minimum value, for example:
+Also you can change the current value, the maximum value or the minimum value, for example:
 <pre>
 picker.currentValue = 0
 picker.maxValue     = 30
@@ -79,7 +79,7 @@ labelFont             // A font of the moving label
 bgColor               // A background color
 </pre>
 
-You can easily found example in this repository.
+You can easily found the example in this repository.
 
 ## License
 
